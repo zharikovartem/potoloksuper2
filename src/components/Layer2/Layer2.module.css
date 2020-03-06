@@ -1,0 +1,37 @@
+  .Layer {
+    min-height: 528px;
+    min-width: 100%;
+    background-color: rgb(156, 146, 7);
+    background: url(./bg2.jpg);
+    background-position: center;
+}
+@media (min-width: 576px) {
+    .Layer2 {
+        /* background-color: rgb(209, 209, 105); */
+        display: grid; 
+        grid-template-columns: 50% 50%;
+        grid-column-gap: 10px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+@media (min-width: 768px) {
+    .Layer2 {
+        /* background-color: rgb(214, 214, 208); */
+        display: grid; 
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        grid-column-gap: 10px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+@media (min-width: 1200px) {
+    .Layer2 {
+        /* background-color: rgb(173, 95, 197); */
+        display: grid; 
+        grid-template-columns: 25% 25% 25% 25%; 
+        grid-column-gap: 10px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}

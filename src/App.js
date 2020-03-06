@@ -1,0 +1,39 @@
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Header from './components/Header/Header';
+import Block1 from './components/Block1/Block1';
+import Layer1 from './components/Layer1/Layer1';
+import Layer2 from './components/Layer2/Layer2';
+import Footer from './components/Footer/Footer';
+import Block2 from './components/Block2/Block2';
+import Block3 from './components/Block3/Block3';
+import Block4 from './components/Block4/Block4';
+import Block5 from './components/Block5/Block5';
+import Block6 from './components/Block6/Block6';
+import Block7 from './components/Block7/Block7';
+import Block8 from './components/Block8/Block8';
+
+const App = () =>{
+  return (
+    <div className="App"> 
+      <Header />
+      <Layer1 />
+      <Layer2 />
+      <div className="container">
+        <Block1 />
+        <Block2 />
+        <Block3 />
+        <Block4 />
+        <Block5 />
+        <Block6 />
+        <Block7 />
+        <Block8 />
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
+
+export default App;
