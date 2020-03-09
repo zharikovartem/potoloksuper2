@@ -1,12 +1,70 @@
+.Order1 {
+    background-color: rgb(255, 188, 57);
+    border-radius: 10px;
+
+    /* height: 437px; */
+
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+.Order2 {
+    border: 7px solid white;
+    border-radius: 10px;
+    background-color: rgb(255, 188, 57);
+    /* height: 400px; */
+    margin: 10px;
+}
+
 .Block1 {
     margin-top: 30px;
-    height: 437px;
+    height: 80%;
     background-color: white;
     border: 10px solid rgb(153, 192, 89);
     /* border-color: rgb(153, 192, 89); */
 
     display: grid;
-    grid-template-columns: 40% 30% 30%;
+    grid-template-columns: 100%;
+}
+@media (min-width: 576px) {
+    .Block1 {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    .Order1 {
+
+        left: 0px;
+        top: 0px;
+        /* margin: 40px 20px; */
+    }
+    
+}
+@media (min-width: 768px) {
+    .Block1 {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    .Order1 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        left: 0px;
+        top: 0px;
+        margin: 40px 20px;
+    }
+}
+@media (min-width: 1200px) {
+    .Block1 {
+        display: grid;
+        grid-template-columns: 40% 30% 30%;
+        height: 400px;
+    }
+    .Order1 {
+        grid-column-start: 3;
+        grid-column-end: 3;
+        left: -10px;
+        top: -70px;
+    }
 }
 
 .button a {
@@ -35,12 +93,11 @@
 
 .BadeFoto {
     height: 200px;
-    width: 330px;
+    width: 80%;
 
     /* width: 75%;
     height: 45%; */
 
-    background-color: thistle;
     position: relative;
     left: 60px;
     top: 60px;
@@ -49,31 +106,14 @@
     
     background: url(./fon.jpg);
     /* background-position: center; */
-    background-size: contain;
+    /* background-size: contain; */
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.Order1 {
-    background-color: rgb(255, 188, 57);
-    border-radius: 10px;
-
-    height: 437px;
-
-    position: relative;
-    left: -10px;
-    top: -30px;
-}
-.Order2 {
-    border: 7px solid white;
-    border-radius: 10px;
-    background-color: rgb(255, 188, 57);
-    height: 400px;
-    margin: 10px;
-}
-
 .Block1_content {
     text-align: center;
+    padding-left: 20px;
 }
 
 .p1 {
