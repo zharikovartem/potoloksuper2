@@ -1,0 +1,23 @@
+.Simple {
+    /* background-color: violet; */
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+}
+
+.Image {
+    background: url(./Prostoi1.jpg);
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+
+    margin: 20px;
+    padding: 20px;
+
+    border: 7px solid rgb(255, 188, 57);
+}
+
+.p1 {
+    font-size: 25px;
+    font-weight: bold;
+}
