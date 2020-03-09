@@ -1,7 +1,26 @@
 .Simple {
-    /* background-color: violet; */
     display: grid;
-    grid-template-columns: 30% 40% 30%;
+    grid-template-columns: 100%;
+}
+.Text1 {
+    grid-row-start: 1;
+}
+.Text2 {
+    grid-row-start: 2;
+}
+
+@media (min-width: 1200px) {
+    .Simple {
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+    }
+    .Text2 {
+        grid-row-start: 1;
+    }
+    .Image {
+        grid-column-start: 2;
+        grid-row-start: 1;
+    }
 }
 
 .Image {
@@ -20,4 +39,8 @@
 .p1 {
     font-size: 25px;
     font-weight: bold;
+}
+
+.Simple li {
+    text-align: left;
 }

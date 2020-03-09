@@ -18,11 +18,7 @@ const Block2 = () => {
                     </div>
                     <div className={st.TypeItem}>
                         <NavLink to='/double' activeClassName={st.active}>Двухуровневый</NavLink>
-                        </div>
-                    {/* <div className={st.TypeItem}><a href="">Парящий</a></div>*/}
-                    {/*<div className={st.TypeItem}><a href="">Тканевый</a></div> */}
-                    <div >Описания простого натяжного потолка</div>
-                    <div >Описания Двухуровневого натяжного потолка</div>
+                    </div>
                 </div>
                 <Route path='/simple' component={Simple}></Route>
                 <Route path='/double' component={Double}></Route>
