@@ -13,11 +13,11 @@ const Block2 = () => {
                 </p>
                 <div className={st.types}>
                     <div className={st.TypeItem}>
-                        <NavLink to='/simple'>Одноуровневый</NavLink>
+                        <NavLink to='/simple' activeClassName={st.active}>Одноуровневый</NavLink>
                         {/* <img className={st.Img} src={prostoi}></img> */}
                     </div>
                     <div className={st.TypeItem}>
-                        <NavLink to='/double'>Двухуровневый</NavLink>
+                        <NavLink to='/double' activeClassName={st.active}>Двухуровневый</NavLink>
                         </div>
                     {/* <div className={st.TypeItem}><a href="">Парящий</a></div>*/}
                     {/*<div className={st.TypeItem}><a href="">Тканевый</a></div> */}
