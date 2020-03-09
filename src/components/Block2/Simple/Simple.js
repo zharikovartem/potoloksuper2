@@ -14,5 +14,5 @@ const Simple = () => {
         </div>
     )
 }
-
+// http://etopotolok.com/vidy-potolkov/natyazhnye/preimushhestva-odnourovnevyx-natyazhnyx-potolkov.html#d1
 export default Simple;
