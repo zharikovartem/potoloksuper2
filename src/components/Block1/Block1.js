@@ -16,7 +16,22 @@ const Block1 = () => {
             </div>
 
             <div className={st.Order1}>
-                <div className={st.Order2}></div>
+                <div className={st.Order2}>
+                    <p className={st.p3}>ЗАЯВКА НА ПОДАРОК</p>
+                    <p className={st.p4}>для получения оставьте свои контактные данные и наш менеджер свяжется с Вами</p>
+
+                    <div className={st.Input_block}>
+                        <labe className={st.p4}>Ваше имя:</labe><br/>
+                        <input className={st.input}></input>
+                    </div>
+                    <div className={st.Input_block}>
+                        <labe className={st.p4}>Ваш телефон:</labe><br/>
+                        <input className={st.input}></input>
+                    </div>
+                    <div className={st.button}>
+                        <a href="#">ПОЛУЧТЬ ПОДАРОК</a>
+                    </div>
+                </div>
             </div>
 
         </div>
