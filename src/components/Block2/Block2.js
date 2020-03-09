@@ -15,8 +15,8 @@ const Block2 = () => {
                         {/* <img className={st.Img} src={prostoi}></img> */}
                     </div>
                     <div className={st.TypeItem}><a href="">Двухуровневый</a></div>
-                    <div className={st.TypeItem}><a href="">Парящий</a></div>
-                    <div className={st.TypeItem}><a href="">Фотопечать</a></div>
+                    {/* <div className={st.TypeItem}><a href="">Парящий</a></div>
+                    <div className={st.TypeItem}><a href="">Тканевый</a></div> */}
                 </div>
         </div>
     )
