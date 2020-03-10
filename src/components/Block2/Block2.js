@@ -14,10 +14,7 @@ const UrlItem = (props) => {
 
 let Block2 = (props) => {
     let data = props.data;
-    let results = data.map(item => <UrlItem name={item.name} to={item.to} />);
-
-    console.log(props.data);
-
+    // let results = data.map(item => <UrlItem name={item.name} to={item.to} />);
 
     return (
         <div className={st.Block2}>
