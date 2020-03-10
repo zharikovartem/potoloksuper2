@@ -15,16 +15,16 @@ import Block7 from './components/Block7/Block7';
 import Block8 from './components/Block8/Block8';
 import { BrowserRouter } from 'react-router-dom';
 
-const App = (props) =>{
+const App = (props) => {
   return (
     <BrowserRouter>
-      <div className="App"> 
+      <div className="App">
         <Header />
         <Layer1 />
         <Layer2 />
         <div className="container">
           <Block1 />
-          <Block2 data={ props.data }/>
+          <Block2 data={props.data} />
           <Block3 />
           <Block4 />
           <Block5 />
@@ -35,7 +35,7 @@ const App = (props) =>{
         <Footer />
       </div>
     </BrowserRouter>
-    
+
   );
 }
 
