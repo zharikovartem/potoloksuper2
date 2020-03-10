@@ -12,18 +12,12 @@ const UrlItem = (props) => {
     );
 }
 
-let Block2 = () => {
-    let data = [
-        {name: 'Одноуровневый', to: '/simple', rowNumber: '0'},
-        {name: 'Двухуровневый', to: '/double', rowNumber: '0'},
-        {name: 'Глянцевый', to: '/gloss', rowNumber: '1'},
-        {name: 'Матовый', to: '/matt', rowNumber: '1'},
-        {name: 'Сатин', to: '/satin', rowNumber: '1'},
-        {name: 'Тканевый', to: '/cloth', rowNumber: '1'}
-    ]
-
-    // формируем массив по map
+let Block2 = (props) => {
+    let data = props.data;
     let results = data.map(item => <UrlItem name={item.name} to={item.to} /> );
+
+    console.log(props.data);
+    
 
     return (
         <div className={st.Block2}>
@@ -31,13 +25,12 @@ let Block2 = () => {
                     ВЫБЕРИТЕ ОПТИМАЛЬНЫЙ  ТИП ПОТОЛКА
                 </p>
                 <div className={st.types0}>
-                    <UrlItem name={ data[0].name } to={ data[0].to } />
-                    <UrlItem name={ data[1].name } to={ data[1].to } />
+                    <UrlItem name={ props.data[0].name } to={ props.data[0].to } />
+                    <UrlItem name={ props.data[1].name } to={ props.data[1].to } />
 
                 </div>
-                <Route path='/simple' component={Simple}></Route>
 
-                {/* передаем props */}
+                <Route path='/simple' render={ () => <Simple/> } />
                 <Route path='/double' render={ () => <Double/> } />
 
                 <div className={ st.types1 }>
