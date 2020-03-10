@@ -1,6 +1,6 @@
 import React from 'react';
 import st from'./Block1.module.css';
-import bage from './bage.png';
+import promo from './promo.png';
 
 const Block1 = (props) => {
 
@@ -30,8 +30,8 @@ const Block1 = (props) => {
 
     return (
         <div className={st.Block1}>
-            <div className={st.BadeFoto} >
-                <img className={st.Bage} src={bage}></img>
+            <div className={st.BadePhoto} >
+                <img className={st.Promo} src={promo}></img>
             </div>
             
 
