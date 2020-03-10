@@ -13,6 +13,36 @@
     grid-template-columns: 30% 35% 35%;
     grid-column-gap: 10px;
 }
+.HamburgerButton {
+    opacity: 0;
+}
+
+@media (max-width: 576px) {
+    .Contacts {
+        display: none;
+    }
+    .Office_span {
+        display: none;
+    }
+    .Icon1 {
+        display: none;
+    }
+    .Header {
+        background: none;
+        grid-template-columns: auto 90px;
+        /* opacity: 0; */
+    }
+    .HamburgerButton {
+        opacity: 1;
+        /* background-color: blanchedalmond; */
+    }
+}
+/* @media (min-width: 768px) {
+
+}
+@media (min-width: 1200px) {
+
+} */
 
 .Phone {
     font-size: 18px;

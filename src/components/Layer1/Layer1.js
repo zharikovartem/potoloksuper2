@@ -4,7 +4,6 @@ import st from './Layer1.module.css';
 const Layer1 = () => {
     return(
         <div className={st.Layer1}>
-            Layer1
             <h2 className={st.h}>
                 Сделайте Ваш дом теплее и уютнее с нашими натяжными потолкам
             </h2>
