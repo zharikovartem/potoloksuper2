@@ -19,8 +19,8 @@ let Block2 = (props) => {
     return (
         <div className={st.Block2}>
             <p className={st.header}>
-                ВЫБЕРИТЕ ОПТИМАЛЬНЫЙ  ТИП ПОТОЛКА
-                </p>
+                ВЫБЕРИТЕ ОПТИМАЛЬНЫЙ ТИП ПОТОЛКА
+            </p>
             <div className={st.types0}>
                 <UrlItem name={props.data[0].name} to={props.data[0].to} />
                 <UrlItem name={props.data[1].name} to={props.data[1].to} />
