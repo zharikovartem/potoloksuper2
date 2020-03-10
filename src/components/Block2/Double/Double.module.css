@@ -1,3 +1,47 @@
+
 .Double {
-    background-color: rgb(189, 156, 189);
+    display: grid;
+    grid-template-columns: 100%;
+}
+.Text1 {
+    grid-row-start: 1;
+}
+.Text2 {
+    grid-row-start: 2;
+}
+
+@media (min-width: 1200px) {
+    .Double {
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+    }
+    .Text2 {
+        grid-row-start: 1;
+    }
+    .Image {
+        grid-column-start: 2;
+        grid-row-start: 1;
+    }
+}
+
+.Image {
+    background: url(./Double1.jpg);
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+
+    margin: 20px;
+    padding: 20px;
+
+    border: 7px solid rgb(255, 188, 57);
+}
+
+.p1 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.Double li {
+    text-align: left;
 }

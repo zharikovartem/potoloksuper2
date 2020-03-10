@@ -10,12 +10,12 @@
     margin-top: 50px;
     font-weight: bold;
 }
-.types {
+.types0 {
     display: grid;
     /* grid-template-columns: 25% 25% 25% 25%; */
     grid-template-columns: 50% 50%;
 }
-.types2 {
+.types1 {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     /* grid-template-columns: 50% 50%; */
