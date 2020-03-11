@@ -1,9 +1,13 @@
 import React from 'react';
 import st from './Layer1.module.css';
+import logo from './../Header/logo22.jpg';
 
 const Layer1 = () => {
     return(
         <div className={st.Layer1}>
+            <div className={st.Icon1}>
+                <img src={logo}></img>
+            </div>
             <h2 className={st.h}>
                 Сделайте Ваш дом теплее и уютнее с нашими натяжными потолкам
             </h2>

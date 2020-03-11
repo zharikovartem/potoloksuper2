@@ -1,7 +1,12 @@
-import { rerenderEntireTree } from './../render';
-// rerenderOrder
-import { rerenderOrder } from './../render';
+// import { rerenderEntireTree } from './../render';
+// import { rerenderOrder } from './../render';
 
+let rerenderEntireTree = () => {
+    console.log('rerenderEntireTree in State.js');
+}
+let rerenderOrder = () => {
+    console.log('rerenderOrder in State.js');
+}
 
 
 let data = {
@@ -122,8 +127,7 @@ let data = {
 };
 
 
-
-export let addOrder = (orderData) => {
+export const addOrder = (orderData) => {
     let newOrder = {
         name: orderData.name,
         phone: orderData.phone
@@ -131,15 +135,22 @@ export let addOrder = (orderData) => {
     rerenderOrder(newOrder);
 }
 
-export let changeNameInOrderPromo = (name) => {
+export const changeNameInOrderPromo = (name) => {
     data.orderPromo.nameDefault = name;
     rerenderEntireTree(data);
 }
 
 // 
-export let changePhoneInOrderPromo = (phone) => {
+export const changePhoneInOrderPromo = (phone) => {
     data.orderPromo.phoneDefault = phone;
     rerenderEntireTree(data);
+}
+
+export const subscribeTree = (observer) => {
+        rerenderEntireTree = observer;
+}
+export const subscribeOrder = (observer) => {
+    rerenderOrder = observer;
 }
 
 

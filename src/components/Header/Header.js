@@ -9,7 +9,6 @@ const Header = () => {
         <div className={st.Header}>
             <div className={st.Icon1}>
                 <img src={logo}></img>
-                {/* <img src="" /> */}
             </div>
             <div className={st.Office}>
                 <div className={st.Office_span}>
