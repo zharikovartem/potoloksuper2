@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-// import { rerenderEntireTree } from './render'; // удалили
-import data, { subscribeTree, subscribeOrder } from './Redux/State';
-import { addOrder, changeNameInOrderPromo, changePhoneInOrderPromo } from './Redux/State';
+import store, { subscribeTree, subscribeOrder, addOrder, changeNameInOrderPromo, changePhoneInOrderPromo }
+    from './Redux/State';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
@@ -12,10 +11,10 @@ let rerenderEntireTree = () => {
     return (
         ReactDOM.render(
             <BrowserRouter>
-                <App data={data}
-                    addOrder={addOrder}
-                    changeNameInOrderPromo={changeNameInOrderPromo}
-                    changePhoneInOrderPromo={changePhoneInOrderPromo}>
+                <App data={store.getState()}
+                    addOrder={store.addOrder.bind(store)}
+                    changeNameInOrderPromo={store.changeNameInOrderPromo.bind(store)}
+                    changePhoneInOrderPromo={store.changePhoneInOrderPromo.bind(store)}>
                 </App>
             </BrowserRouter>
             , document.getElementById('root'))
@@ -27,15 +26,15 @@ let rerenderOrder = (orders) => {
         ReactDOM.render(
             <div>
                 Новый заказ от {orders.name}. Тел: {orders.phone}
-                <button onClick={() => rerenderEntireTree(data)}>OK</button>
+                <button onClick={() => rerenderEntireTree(store)}>OK</button>
             </div>
             , document.getElementById('root'))
     );
 };
 
-rerenderEntireTree(data);
+rerenderEntireTree(store);
 
-subscribeTree(rerenderEntireTree);
-subscribeOrder(rerenderOrder);
+store.subscribeTree(rerenderEntireTree);
+store.subscribeOrder(rerenderOrder);
 
 serviceWorker.unregister();
