@@ -22,9 +22,8 @@ const App = (props) => {
       <Layer2 />
       <div className="container">
         <Block1 data={props.data.orderPromo}
-          addOrder={props.addOrder}
-          changePhoneInOrderPromo={props.changePhoneInOrderPromo}
-          changeNameInOrderPromo={props.changeNameInOrderPromo} >
+          dispatch={props.dispatch}
+          >
         </Block1>
         <Block2 data={props.data.productTypes} />
         <Block3 />

@@ -1,3 +1,7 @@
+const ADD_ORDER = 'ADD-ORDER'
+const CHANGE_NAME_IN_ORDER_PROMO = 'CHANGE-NAME-IN-ORDER-PROMO';
+const CHANGE_PHONE_IN_ORDER_PROMO = 'CHANGE-PHONE-IN-ORDER-PROMO';
+
 let store = {
     _state: {
         productTypes: [
@@ -118,60 +122,39 @@ let store = {
     getState() {
         return this._state;
     },
-    setState() {
-
+    setState(newState) {
+        this._state = newState;
     },
-    rerenderEntireTree() { console.log('123');} ,
-    rerenderOrder() {},
-    addOrder(orderData) {
-        this.rerenderOrder(orderData);
-    },
-    changeNameInOrderPromo(name) {
-        this._state.orderPromo.nameDefault = name;
-        this.rerenderEntireTree(this.store);
-    },
-    changePhoneInOrderPromo(phone) {
-        this._state.orderPromo.phoneDefault = phone;
-        this.rerenderEntireTree(this.store);
-    },
+    rerenderEntireTree() {} ,
     subscribeTree(observer) {
         this.rerenderEntireTree = observer;
     },
+    rerenderOrder() {},
     subscribeOrder(observer) {
         this.rerenderOrder = observer;
+    },
+    dispatch (action) {
+        if (action.type === ADD_ORDER) {
+            this.rerenderOrder(this._state);
+        } else if (action.type === CHANGE_NAME_IN_ORDER_PROMO) {
+            this._state.orderPromo.nameDefault = action.name;
+            this.rerenderEntireTree(this.store);
+        } else if (action.type === CHANGE_PHONE_IN_ORDER_PROMO) {
+            this._state.orderPromo.phoneDefault = action.phone;
+            this.rerenderEntireTree(this.store);
+        }
     }
 }
 
-// let rerenderEntireTree = () => {}
-// let rerenderOrder = () => {}
+export const addOrderActionCreator = () => {
+    return {type: ADD_ORDER}
+}
+export const cangeNameInOrderPromoActionCreator = (name) => {
+    return {type: CHANGE_NAME_IN_ORDER_PROMO, name: name}
+}
+export const cangePhoneInOrderPromoActionCreator = (phone) => {
+    return {type: CHANGE_PHONE_IN_ORDER_PROMO, phone: phone}
+}
 
-
-// export const addOrder = (orderData) => {
-//     let newOrder = {
-//         name: orderData.name,
-//         phone: orderData.phone
-//     };
-//     rerenderOrder(newOrder);
-// }
-
-// export const changeNameInOrderPromo = (name) => {
-//     data.orderPromo.nameDefault = name;
-//     rerenderEntireTree(data);
-// }
-
-// export const changePhoneInOrderPromo = (phone) => {
-//     data.orderPromo.phoneDefault = phone;
-//     rerenderEntireTree(data);
-// }
-
-// export const subscribeTree = (observer) => {
-//         rerenderEntireTree = observer;
-// }
-// export const subscribeOrder = (observer) => {
-//     rerenderOrder = observer;
-// }
-
-
-// export default data;
 export default store;
 window.store = store;

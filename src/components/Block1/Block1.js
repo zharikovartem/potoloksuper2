@@ -1,6 +1,7 @@
 import React from 'react';
 import st from'./Block1.module.css';
 import promo from './promo.png';
+import { addOrderActionCreator, cangeNameInOrderPromoActionCreator, cangePhoneInOrderPromoActionCreator } from '../../Redux/State';
 
 const Block1 = (props) => {
 
@@ -10,22 +11,24 @@ const Block1 = (props) => {
     let addOrder = () => {
         let name = nameElement.current.value;
         let phone = phoneElement.current.value;
-        // alert(name + ' - ' + phone);
         let newOrder = {
             name: name,
             phone: phone
         }
-        props.addOrder(newOrder);
+        // props.dispatch({type:'ADD-ORDER'});
+
+        props.dispatch( addOrderActionCreator() );
+        
     }
 
     let onNameChange = () => {
         let name = nameElement.current.value;
-        props.changeNameInOrderPromo(name);
+        props.dispatch( cangeNameInOrderPromoActionCreator(name));
     }
 
     let onPhoneChange = () => {
         let phone = phoneElement.current.value;
-        props.changePhoneInOrderPromo(phone);
+        props.dispatch(cangePhoneInOrderPromoActionCreator(phone));
     }
 
     return (
