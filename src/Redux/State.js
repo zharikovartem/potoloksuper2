@@ -146,14 +146,21 @@ let store = {
     }
 }
 
-export const addOrderActionCreator = () => {
-    return {type: ADD_ORDER}
-}
+export const addOrderActionCreator = () => ({type: ADD_ORDER})
+
 export const cangeNameInOrderPromoActionCreator = (name) => {
-    return {type: CHANGE_NAME_IN_ORDER_PROMO, name: name}
+    return (
+        {
+            type: CHANGE_NAME_IN_ORDER_PROMO, 
+            name: name}
+        )
 }
+
 export const cangePhoneInOrderPromoActionCreator = (phone) => {
-    return {type: CHANGE_PHONE_IN_ORDER_PROMO, phone: phone}
+    return {
+        type: CHANGE_PHONE_IN_ORDER_PROMO, 
+        phone: phone
+    }
 }
 
 export default store;

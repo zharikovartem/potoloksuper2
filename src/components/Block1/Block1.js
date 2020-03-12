@@ -9,16 +9,7 @@ const Block1 = (props) => {
     let phoneElement = React.createRef();
 
     let addOrder = () => {
-        let name = nameElement.current.value;
-        let phone = phoneElement.current.value;
-        let newOrder = {
-            name: name,
-            phone: phone
-        }
-        // props.dispatch({type:'ADD-ORDER'});
-
         props.dispatch( addOrderActionCreator() );
-        
     }
 
     let onNameChange = () => {
