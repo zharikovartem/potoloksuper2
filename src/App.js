@@ -12,6 +12,7 @@ import Block5 from './components/Block5/Block5';
 import Block6 from './components/Block6/Block6';
 import Block7 from './components/Block7/Block7';
 import Block8 from './components/Block8/Block8';
+import JivoSite from './components/JivoSite/JivoSite';
 // import { BrowserRouter } from 'react-router-dom';
 
 const App = (props) => {
@@ -31,7 +32,8 @@ const App = (props) => {
         <Block5 />
         <Block6 />
         <Block7 />
-        <Block8 />
+        <Block8 data={props.data} dispatch={props.dispatch}/>
+        <JivoSite />
       </div>
       <Footer />
     </div>

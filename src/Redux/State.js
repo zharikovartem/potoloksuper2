@@ -1,6 +1,8 @@
 const ADD_ORDER = 'ADD-ORDER'
 const CHANGE_NAME_IN_ORDER_PROMO = 'CHANGE-NAME-IN-ORDER-PROMO';
 const CHANGE_PHONE_IN_ORDER_PROMO = 'CHANGE-PHONE-IN-ORDER-PROMO';
+const CHANGE_MESSAGE_TEXT = 'CHANGE-MESSAGE-TEXT';
+const SEND_MESSAGE_TEXT = 'SEND-MESSAGE-TEXT';
 
 let store = {
     _state: {
@@ -114,10 +116,19 @@ let store = {
                 exampleImage: '123'
             }
         ],
+        messages: [
+            {
+                id: '0',
+                sender: 'Artem',
+                target: 'Tanya',
+                text: 'test Message'
+            }
+        ],
         orderPromo: {
             phoneDefault: 'Введите телефон', 
             nameDefault: 'Введите имя'
-        }
+        },
+        newMessageBody:'Введите сообщение'
     },
     getState() {
         return this._state;
@@ -142,6 +153,19 @@ let store = {
         } else if (action.type === CHANGE_PHONE_IN_ORDER_PROMO) {
             this._state.orderPromo.phoneDefault = action.phone;
             this.rerenderEntireTree(this.store);
+        } else if (action.type === CHANGE_MESSAGE_TEXT) {
+            this._state.newMessageBody = action.messegeText;
+            this.rerenderEntireTree(this.store);
+        } else if (action.type === SEND_MESSAGE_TEXT) {
+            console.log('new message: '+ this._state.newMessageBody )
+            this._state.messages.push( {
+                id: this._state.messages.length,
+                sender: 'Tanya',
+                target: 'Artem',
+                text: this._state.newMessageBody
+            } )
+            this._state.newMessageBody = '';
+            this.rerenderEntireTree(this.store);
         }
     }
 }
@@ -160,6 +184,20 @@ export const cangePhoneInOrderPromoActionCreator = (phone) => {
     return {
         type: CHANGE_PHONE_IN_ORDER_PROMO, 
         phone: phone
+    }
+}
+
+export const changeMessageTextActionCreator = (text) => {
+    // console.log('changeMessageText: '+text)
+    return {
+        type: CHANGE_MESSAGE_TEXT,
+        messegeText: text
+    }
+}
+
+export const sendMessageTextActionCreator = () => {
+    return {
+        type: SEND_MESSAGE_TEXT
     }
 }
 

@@ -1,0 +1,27 @@
+.JivoSite {
+    background-color: #99C059;
+
+    position: fixed;
+    left: auto;
+    top: 40%;
+    right: 0;
+    height: 90px;
+    z-index: 266;
+
+    height: 200px;
+    width: 40px;
+
+    border-radius: 20px 0 0 20px;
+}
+.JivoSite span {
+    margin-top: 140px;
+    margin-left: 10px;
+    display: inline-block;
+    white-space: nowrap;
+
+    transform: translate(0,100%) rotate(-90deg);
+    transform-origin: 0 0;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+}
