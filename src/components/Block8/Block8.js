@@ -13,10 +13,14 @@ const Block8 = (props) => {
 
     let onChangeMessegeBodyChange = (event) => {
         let text  = event.target.value;
+        // console.log(text)
         props.dispatch(changeMessageTextActionCreator(text));
     }
 
     let messages = props.data.messages;
+    // console.log(props.data)
+    // console.log(messages)
+    // debugger;
     let messagesBlock = messages.map(function(item) {
         return(
             <div>

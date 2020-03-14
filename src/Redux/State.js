@@ -1,4 +1,8 @@
-const ADD_ORDER = 'ADD-ORDER'
+import messageReducer from "./message-reducer";
+import orderPromoReducer from "./orderPromo-reducer";
+import newMessageBodyReducer from "./newMessageBody-reducer";
+
+const ADD_ORDER = 'ADD-ORDER';
 const CHANGE_NAME_IN_ORDER_PROMO = 'CHANGE-NAME-IN-ORDER-PROMO';
 const CHANGE_PHONE_IN_ORDER_PROMO = 'CHANGE-PHONE-IN-ORDER-PROMO';
 const CHANGE_MESSAGE_TEXT = 'CHANGE-MESSAGE-TEXT';
@@ -145,28 +149,35 @@ let store = {
         this.rerenderOrder = observer;
     },
     dispatch (action) {
-        if (action.type === ADD_ORDER) {
-            this.rerenderOrder(this._state);
-        } else if (action.type === CHANGE_NAME_IN_ORDER_PROMO) {
-            this._state.orderPromo.nameDefault = action.name;
-            this.rerenderEntireTree(this.store);
-        } else if (action.type === CHANGE_PHONE_IN_ORDER_PROMO) {
-            this._state.orderPromo.phoneDefault = action.phone;
-            this.rerenderEntireTree(this.store);
-        } else if (action.type === CHANGE_MESSAGE_TEXT) {
-            this._state.newMessageBody = action.messegeText;
-            this.rerenderEntireTree(this.store);
-        } else if (action.type === SEND_MESSAGE_TEXT) {
-            console.log('new message: '+ this._state.newMessageBody )
-            this._state.messages.push( {
-                id: this._state.messages.length,
-                sender: 'Tanya',
-                target: 'Artem',
-                text: this._state.newMessageBody
-            } )
-            this._state.newMessageBody = '';
-            this.rerenderEntireTree(this.store);
-        }
+
+        this._state.messages = messageReducer(this._state.messages, this._state.newMessageBody, action);
+        this._state.orderPromo = orderPromoReducer(this._state.orderPromo, action);
+        this._state.newMessageBody = newMessageBodyReducer(this._state.newMessageBody, action);
+
+        this.rerenderEntireTree(this.store);
+
+        // if (action.type === ADD_ORDER) {
+        //     this.rerenderOrder(this._state);
+        // } else if (action.type === CHANGE_NAME_IN_ORDER_PROMO) {
+        //     this._state.orderPromo.nameDefault = action.name;
+        //     this.rerenderEntireTree(this.store);
+        // } else if (action.type === CHANGE_PHONE_IN_ORDER_PROMO) {
+        //     this._state.orderPromo.phoneDefault = action.phone;
+        //     this.rerenderEntireTree(this.store);
+        // } else if (action.type === CHANGE_MESSAGE_TEXT) {
+        //     this._state.newMessageBody = action.messegeText;
+        //     this.rerenderEntireTree(this.store);
+        // } else if (action.type === SEND_MESSAGE_TEXT) {
+        //     console.log('new message: '+ this._state.newMessageBody )
+        //     this._state.messages.push( {
+        //         id: this._state.messages.length,
+        //         sender: 'Tanya',
+        //         target: 'Artem',
+        //         text: this._state.newMessageBody
+        //     } )
+        //     this._state.newMessageBody = '';
+        //     this.rerenderEntireTree(this.store);
+        // }
     }
 }
 
