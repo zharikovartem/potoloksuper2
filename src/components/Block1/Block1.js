@@ -1,7 +1,7 @@
 import React from 'react';
 import st from'./Block1.module.css';
 import promo from './promo.png';
-import { addOrderActionCreator, cangeNameInOrderPromoActionCreator, cangePhoneInOrderPromoActionCreator } from '../../Redux/State';
+import { addOrderActionCreator, cangeNameInOrderPromoActionCreator, cangePhoneInOrderPromoActionCreator } from '../../Redux/orderPromo-reducer';
 
 const Block1 = (props) => {
 
@@ -14,7 +14,10 @@ const Block1 = (props) => {
 
     let onNameChange = () => {
         let name = nameElement.current.value;
-        props.dispatch( cangeNameInOrderPromoActionCreator(name));
+        let obj = cangeNameInOrderPromoActionCreator(name);
+        // debugger;
+        let result = props.dispatch( obj );
+        // debugger;
     }
 
     let onPhoneChange = () => {
@@ -22,6 +25,7 @@ const Block1 = (props) => {
         props.dispatch(cangePhoneInOrderPromoActionCreator(phone));
     }
 
+    // debugger;
     return (
         <div className={st.Block1}>
             <div className={st.BadePhoto} >

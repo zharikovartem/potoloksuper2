@@ -13,9 +13,10 @@ const UrlItem = (props) => {
 }
 
 let Block2 = (props) => {
+    // debugger;
     let data = props.data;
     // let results = data.map(item => <UrlItem name={item.name} to={item.to} />);
-
+    // debugger;
     return (
         <div className={st.Block2}>
             <p className={st.header}>

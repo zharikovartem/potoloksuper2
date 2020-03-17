@@ -181,36 +181,36 @@ let store = {
     }
 }
 
-export const addOrderActionCreator = () => ({type: ADD_ORDER})
+// export const addOrderActionCreator = () => ({type: ADD_ORDER})
 
-export const cangeNameInOrderPromoActionCreator = (name) => {
-    return (
-        {
-            type: CHANGE_NAME_IN_ORDER_PROMO, 
-            name: name}
-        )
-}
+// export const cangeNameInOrderPromoActionCreator = (name) => {
+//     return (
+//         {
+//             type: CHANGE_NAME_IN_ORDER_PROMO, 
+//             name: name}
+//         )
+// }
 
-export const cangePhoneInOrderPromoActionCreator = (phone) => {
-    return {
-        type: CHANGE_PHONE_IN_ORDER_PROMO, 
-        phone: phone
-    }
-}
+// export const cangePhoneInOrderPromoActionCreator = (phone) => {
+//     return {
+//         type: CHANGE_PHONE_IN_ORDER_PROMO, 
+//         phone: phone
+//     }
+// }
 
-export const changeMessageTextActionCreator = (text) => {
-    // console.log('changeMessageText: '+text)
-    return {
-        type: CHANGE_MESSAGE_TEXT,
-        messegeText: text
-    }
-}
+// export const changeMessageTextActionCreator = (text) => {
+//     // console.log('changeMessageText: '+text)
+//     return {
+//         type: CHANGE_MESSAGE_TEXT,
+//         messegeText: text
+//     }
+// }
 
-export const sendMessageTextActionCreator = () => {
-    return {
-        type: SEND_MESSAGE_TEXT
-    }
-}
+// export const sendMessageTextActionCreator = () => {
+//     return {
+//         type: SEND_MESSAGE_TEXT
+//     }
+// }
 
 export default store;
 window.store = store;

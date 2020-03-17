@@ -1,23 +1,27 @@
 import React from 'react';
 import st from './Block8.module.css';
-import { changeMessageTextActionCreator, sendMessageTextActionCreator } from '../../Redux/State';
-
+import { changeMessageTextActionCreator } from '../../Redux/newMessageBody-reducer';
+import {sendMessageTextActionCreator} from '../../Redux/message-reducer'
 
 const Block8 = (props) => {
     let messageText = React.createRef();
 
-    let onSendMassegeClick = () => {
-        props.dispatch(sendMessageTextActionCreator());
+    let onSendMassegeClick = (event) => {
+        let newMessageBody  = messageText.current.value;
+        // debugger;
+        props.dispatch(sendMessageTextActionCreator(newMessageBody));
     }
 
 
     let onChangeMessegeBodyChange = (event) => {
         let text  = event.target.value;
         // console.log(text)
-        props.dispatch(changeMessageTextActionCreator(text));
+        
+        let test = props.dispatch(changeMessageTextActionCreator(text));
+        // debugger;
     }
 
-    let messages = props.data.messages;
+    let messages = props.data.messageReducer.messages;
     // console.log(props.data)
     // console.log(messages)
     // debugger;
@@ -30,13 +34,14 @@ const Block8 = (props) => {
             </div>
         )
     });
-
+    // let a = props;
+    // debugger;
     return (
         <div className={st.Block8}>
             <div>
                 <textarea
                     ref={messageText}
-                    value={props.data.newMessageBody}
+                    value={props.data.newMessageBodyReducer.newMessageBody}
                     onChange={onChangeMessegeBodyChange}
                 ></textarea>
             </div>

@@ -16,17 +16,19 @@ import JivoSite from './components/JivoSite/JivoSite';
 // import { BrowserRouter } from 'react-router-dom';
 
 const App = (props) => {
+  let test = props;
+  // debugger;
   return (
     <div className="App">
       <Header />
       <Layer1 />
       <Layer2 />
       <div className="container">
-        <Block1 data={props.data.orderPromo}
+        <Block1 data={props.data.orderPromoReducer.orderPromo}
           dispatch={props.dispatch}
           >
         </Block1>
-        <Block2 data={props.data.productTypes} />
+        <Block2 data={props.data.productTypesReducer.productTypes} />
         <Block3 />
         <Block4 />
         <Block5 />
